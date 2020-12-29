@@ -41,9 +41,34 @@ const pAequorFactory = (number , array )=> {
          }
          let percentage = (count*100)/15 ; 
          return  `specimen ${this.specimenNum} and specimen ${obj.prop} have ${percentage}% DNA in common` ; 
+       }, 
+       willLikelySurvive : function () {
+          let count = 0 ; 
+          for (let index = 0; index < this.dna.length; index++) {
+            if(this.dna[index] === "C"|| this.dna[index] === 'G' ){
+              count++ ; 
+            }} 
+          let lifeRate = ((count*100)/15) ;
+          if (lifeRate < 60 ) {
+
+            return false ; 
+            
+          } else {
+
+             return true ; 
+            
+          }
        }
          }
+    
 }
+let x = pAequorFactory(1, ['G', 'C', 'C', 'G','A', 'T', 'C', 'G','A', 'T', 'C', 'G','A', 'T', 'C' ]); 
+console.log(x.willLikelySurvive());
+
+
+
+
+
 
 
 
