@@ -62,24 +62,17 @@ const pAequorFactory = (number , array )=> {
          }
     
 }
-let x = pAequorFactory(1, ['G', 'C', 'C', 'G','A', 'T', 'C', 'G','A', 'T', 'C', 'G','A', 'T', 'C' ]); 
-console.log(x.willLikelySurvive());
+const makingInstance = function () {
+  let instances = [] ; 
+  while (instances.length<30) {
+     let n = Math.floor(Math.random() * 30 )+1 ; 
+     let pAequor = pAequorFactory(n , mockUpStrand())
+      if (pAequor.willLikelySurvive()) {
+          instances.push(pAequor) 
+      }
+    }
+  return instances ;   
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  let x = makingInstance(); 
+  console.log(x)
