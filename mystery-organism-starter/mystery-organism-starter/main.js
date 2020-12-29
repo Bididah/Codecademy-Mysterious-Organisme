@@ -40,14 +40,13 @@ const pAequorFactory = (number , array )=> {
            }
          }
          let percentage = (count*100)/15 ; 
-         
-    return count + "   " +  currentDna + tocompareDna ; 
+         return  `specimen ${this.specimenNum} and specimen ${obj.prop} have ${percentage}% DNA in common` ; 
        }
          }
 }
-const x = pAequorFactory(1,["A","C","G","T","C","C","G","A","A","T","G","T","A","G","C"])
-y = x.comparDNA({prop : 2, Dna : ["A","C","G","T","C","C","G","A","A","T","G","T","A","G","C"] });
-console.log(y); 
+
+
+
 
 
 
