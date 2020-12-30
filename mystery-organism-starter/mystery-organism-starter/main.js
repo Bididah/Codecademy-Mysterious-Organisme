@@ -30,9 +30,9 @@ const pAequorFactory = (number , array )=> {
 
       return this.dna ; 
     },
-    comparDNA : function( obj = { prop  , Dna }){ 
+    comparDNA : function( ToComparepAequor = { specimen  , Dna }){ 
       const currentDna = this.dna ; 
-      const tocompareDna = obj.Dna; 
+      const tocompareDna = ToComparepAequor.Dna; 
       let count = 0 ;
        for (let index = 0; index < currentDna.length; index++) {
          if(currentDna[index] == tocompareDna[index]){
@@ -40,7 +40,7 @@ const pAequorFactory = (number , array )=> {
            }
          }
          let percentage = (count*100)/15 ; 
-         return  `specimen ${this.specimenNum} and specimen ${obj.prop} have ${percentage}% DNA in common` ; 
+         return  `specimen ${this.specimenNum} and specimen ${ToComparepAequor.specimen} have ${percentage}% DNA in common` ; 
        }, 
        willLikelySurvive : function () {
           let count = 0 ; 
@@ -66,6 +66,7 @@ const makingInstance = function () {
   let instances = [] ; 
   while (instances.length<30) {
      let n = Math.floor(Math.random() * 30 )+1 ; 
+     
      let pAequor = pAequorFactory(n , mockUpStrand())
       if (pAequor.willLikelySurvive()) {
           instances.push(pAequor) 
